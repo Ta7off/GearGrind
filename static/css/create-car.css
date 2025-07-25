@@ -1,0 +1,74 @@
+form input,
+form select,
+form textarea {
+  width: 100%;
+  padding: 0.6rem 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  background-color: #fefefe;
+  box-sizing: border-box; /* makes padding play nice */
+}
+
+
+.login-container {
+  max-width: 450px;
+  margin: 3rem auto;
+  padding: 2rem 2.5rem;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+.login-container h1 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  align-items: center;
+}
+
+.login-footer {
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+
+.login-footer a {
+  color: #578E7E;
+  text-decoration: underline;
+}
+
+form button {
+  width: 100%;
+}
+
+.form-group {
+  width: 100%;
+}
+
+.form-group div {
+  width: 100%;
+}
+#image-clear_id {
+  display: none;
+}
+
+main {
+  width: 40%;
+  margin: auto;
+}
+
+form button {
+  font-size: 16px;
+}
+
+#div_id_is_listing {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

@@ -1,0 +1,66 @@
+.register-container {
+  max-width: 500px;
+  margin: 3rem auto;
+  background-color: #fff;
+  padding: 2rem 2.5rem;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.register-container h1 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+form input,
+form select,
+form textarea {
+  width: 100%;
+  padding: 0.6rem 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  background-color: #fefefe;
+  box-sizing: border-box; /* makes padding play nice */
+}
+
+form input:focus,
+form select:focus,
+form textarea:focus {
+  border-color: #578E7E;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(87, 142, 126, 0.2);
+}
+
+form p {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #444;
+}
+
+form a {
+  color: #578E7E;
+  text-decoration: underline;
+}
+.register-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+form button {
+  width: 100%;
+}

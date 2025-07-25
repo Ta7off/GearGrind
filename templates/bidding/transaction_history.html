@@ -1,0 +1,50 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block title %}Home{% endblock %}
+{% block extra_head %}
+    <link rel="stylesheet" href="{% static 'css/transaction_history.css' %}">
+{% endblock %}
+
+{% block page_class %}Transactions{% endblock %}
+
+{% block content %}
+    {% for transaction in transaction_list %}
+        {% if profile == transaction.seller %}
+            <div class="sale">
+                <a href="{% url 'car-detail' transaction.car.id %}">
+                    <img src="{{ transaction.car.image.url }}" alt="car details">
+                </a>
+                <h1>
+                    <a href="{% url 'user-details' transaction.seller.id %}">
+                        {{ transaction.seller }}
+                    </a>
+                    has sold his {{ transaction.car.make }} {{ transaction.car.model }}
+                    to <a href="{% url 'user-details' transaction.buyer.id %}">{{ transaction.buyer }}</a>
+                    for {{ transaction.final_price }} BGN
+                </h1>
+            </div>
+        {% elif profile == transaction.buyer %}
+            <div class="purchase">
+                <a href="{% url 'car-detail' transaction.car.id %}">
+                    <img src="{{ transaction.car.image.url }}" alt="car details">
+                </a>
+                <h1>
+                    <a href="{% url 'user-details' transaction.seller.id %}">
+                        {{ transaction.seller }}
+                    </a>
+                    has sold his {{ transaction.car.make }} {{ transaction.car.model }}
+                    to <a href="{% url 'user-details' transaction.buyer.id %}">{{ transaction.buyer }}</a>
+                    for {{ transaction.final_price }} BGN
+                </h1>
+            </div>
+        {% endif %}
+    {% empty %}
+        {% if profile == user.request %}
+            <h1>You have not made any transactions</h1>
+        {% else %}
+            <h1>{{ profile.username }} has not made any transactions</h1>
+        {% endif %}
+    {% endfor %}
+
+{% endblock %}

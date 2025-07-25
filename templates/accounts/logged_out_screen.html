@@ -1,0 +1,17 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block title %}Home{% endblock %}
+{% block extra_head %}
+    <link rel="stylesheet" href="{% static 'css/logged_out_page.css' %}">
+{% endblock %}
+
+{% block page_class %}logout-page{% endblock %}
+
+{% block content %}
+    <h1>You have successfully logged out of your account</h1>
+    <h3>Where to now?</h3>
+    <a class="buttons" href="{% url 'home' %}">Homepage</a>
+    <a class="buttons" href="{% url 'register' %}">Register</a>
+    <a class="buttons" href="{% url 'login' %}">Login</a>
+{% endblock %}

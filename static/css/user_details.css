@@ -1,0 +1,96 @@
+form a {
+    font-size: 13px;
+}
+
+form {
+    display: flex;
+    justify-content: space-between;
+}
+
+main {
+    padding: 0;
+}
+
+.profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile img {
+    width: 200px;
+    border-radius: 50%;
+    height: 200px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.profile h1, .profile h3 {
+    margin: 10px 0
+}
+
+.account-delete {
+    padding: 20px;
+}
+
+.car img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.car-posts {
+    display: flex;
+    gap: 30px;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+}
+
+.details {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.user-details-wrapper {
+    display: flex;
+    align-items: flex-start;
+    gap: 40px;
+
+}
+
+.action-panel {
+    flex: 0 0 144px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    background-color: #F5ECD5;
+}
+
+.action-panel .buttons:hover {
+    background-color: #555;
+}
+
+.profile-panel {
+    flex: 1;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-icons img{
+    width: 75px;
+    height: 75px;
+    transition: 0.3s;
+}
+
+.profile-icons img:hover {
+    cursor: pointer;
+    transform: scale(1.3);
+}

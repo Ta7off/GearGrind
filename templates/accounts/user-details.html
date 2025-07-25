@@ -1,0 +1,75 @@
+{% extends 'core/base.html' %}
+{% load crispy_forms_filters %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block extra_head %}
+    <link rel="stylesheet" href="{% static 'css/user_details.css' %}">
+{% endblock %}
+{% block title %}Account Details{% endblock %}
+
+{% block content %}
+    <div class="user-details-wrapper">
+        <div class="action-panel">
+            {% if request.user == profile %}
+                <form class="profile-icons" id="logout-form" action="{% url 'logout' %}" method="POST">
+                    {% csrf_token %}
+                    <img src="{{ MEDIA_URL }}assets/logout.png" alt="Logout" class="clickable-image"
+                         onclick="this.closest('form').submit();">
+                </form>
+                <a class="profile-icons" href="{% url 'user-update' profile.id %}">
+                    <img src="{{ MEDIA_URL }}assets/edit_account.png" alt="">
+                </a>
+
+                <a href="{% url 'list-bid' %}" class="profile-icons">
+                    <img src="{{ MEDIA_URL }}assets/auctions.png" alt="List Icon">
+                </a>
+            {% endif %}
+            <a class="profile-icons" href="{% url 'transaction_history' profile.id %}">
+                <img src="{{ MEDIA_URL }}assets/transaction_history.png" alt="Transactions">
+            </a>
+            {% if request.user == profile %}
+                <a href="{% url 'user-delete' %}" class="profile-icons">
+                    <img src="{{ MEDIA_URL }}assets/delete_account.png" alt="List Icon">
+                </a>
+            {% endif %}
+        </div>
+        <div class="profile-panel">
+            <div class="details">
+                <div class="profile">
+                    <img src="{{ profile.profile_image.url }}" alt="profile_image">
+                    <h1>{{ profile.username }}</h1>
+                    <h3>email for contact: {{ profile.email }}</h3>
+                    {% if profile.bio %}
+                        <p>{{ profile.bio }}</p>
+                    {% endif %}
+                </div>
+                {% if profile.owned_cars %}
+                    <h2>current cars of {{ profile.username }}:</h2>
+                {% else %}
+                    <h2>{{ profile.username }} Does not have any cars</h2>
+                {% endif %}
+            </div>
+            {% if profile.owned_cars %}
+                <div class="car-posts">
+                    {% if request.user == profile %}
+                        <div class="car">
+                            <a href="{% url 'car-create' %}">
+                                <img src="/media/assets/add_car.png" alt="Add a car">
+                            </a>
+                        </div>
+                    {% endif %}
+                    {% for car in profile.owned_cars.all %}
+                        <div class="car">
+                            <a href="{% url 'car-detail' car.id %}">
+                                <img src="{{ car.image.url }}" alt="car-image">
+                            </a>
+                        </div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+            <div class="details"> ...</div>
+        </div>
+    </div>
+
+{% endblock %}

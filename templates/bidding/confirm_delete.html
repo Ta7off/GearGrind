@@ -1,0 +1,22 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block title %}Home{% endblock %}
+{% block extra_head %}
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+{% endblock %}
+
+{% block page_class %}Confirm Delete{% endblock %}
+
+{% block content %}
+    <div style="padding: 20px; display: flex; flex-direction: column">
+        <h2>Are you sure you want to delete your bid of {{ object.amount }} BGN
+            on {{ object.car.make }} {{ object.car.model }}?</h2>
+
+        <form method="POST">
+            {% csrf_token %}
+            <button type="submit" class="buttons">Delete</button>
+            <a href="{% url 'list-bid' %}" class="buttons">Cancel</a>
+        </form>
+    </div>
+{% endblock %}

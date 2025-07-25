@@ -1,0 +1,92 @@
+{% extends 'core/base.html' %}
+{% load crispy_forms_filters %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block extra_head %}
+    <link rel="stylesheet" href="{% static 'css/detail_car.css' %}">
+{% endblock %}
+{% block title %}Car Details{% endblock %}
+
+{% block content %}
+    <div class="owner-wrapper">
+        <div class="profile-image">
+            <a href="{% url 'user-details' car.owner.id %}">
+                <img src="{{ car.owner.profile_image.url }}" alt="pfp">
+            </a>
+        </div>
+        <div class="profile-username">
+            <a href="{% url 'user-details' car.owner.id %}">
+                <h3>{{ car.owner.username }}</h3>
+            </a>
+        </div>
+    </div>
+    {% if car.is_listed %}
+        <div class="place-bid-wrapper">
+            <div style="display: flex; justify-content: center; align-items: center; gap: 12px
+;    pointer-events: none; user-select: none; cursor: default;">
+                <h1 style="color: #EB603E; align-items: center">
+                    This car is up for bidding
+                </h1>
+                <img style="width: 39.2px; height: 39.2px" src="{{ MEDIA_URL }}assets/Red_circle.gif" alt="">
+            </div>
+            {% if car.owner != request.user %}
+                <a style="display: flex; justify-content: center; align-items: center; margin-bottom: 10px"
+                   href="{% url 'place-bid' car.id %}">
+                    <img style="width: 90px; height: 90px" src="{{ MEDIA_URL }}assets/place_bid.png" alt="">
+                </a>
+            {% endif %}
+        </div>
+
+    {% endif %}
+    <div class="car-detail-wrapper">
+        <div class="car-image">
+            <img src="{{ car.image.url }}" alt="car-image">
+        </div>
+        <div class="car-details-wrapper">
+            <div class="car-information">
+                <h1 style="display: flex; align-items: center">{{ car.make }} {{ car.model }} {{ car.year }}</h1>
+                <div class="car-sale-interaction">
+                    {% if car.owner == request.user and not car.is_listed %}
+                        <a href="{% url 'start-auction' car.id %}">
+                            <img style="width: 90px; height: 90px"
+                                 src="{{ MEDIA_URL }}assets/auction.png" alt="">
+                        </a>
+                    {% endif %}
+                    {% if car.owner == request.user and car.is_listed %}
+                        <a href="{% url 'end-auction' car.id %}">
+                            <img style="width: 90px; height: 90px"
+                                 src="{{ MEDIA_URL }}assets/end_auction.png" alt="">
+                        </a>
+                        <a href="{% url 'cancel-auction' car.id %}">
+                            <img style="width: 90px; height: 90px"
+                                 src="{{ MEDIA_URL }}assets/cancel_auction.png" alt="">
+                        </a>
+                    {% endif %}
+                    {% if car.owner == request.user %}
+                        <a href="{% url 'car-delete' car.id %}">
+                            <img src="{{ MEDIA_URL }}assets/delete_car.png" alt="">
+                        </a>
+                        <a href="{% url 'car-edit' car.id %}">
+                            <img src="{{ MEDIA_URL }}assets/edit_car.png" alt="">
+                        </a>
+                    {% endif %}
+                </div>
+                <h3>Description</h3>
+                <h4>{{ car.description }}</h4>
+            </div>
+        </div>
+        <div class="car-posts-wrapper">
+            {% if posts %}
+                <h1>posts associated with {{ car.owner.username }}'s {{ car.make }} {{ car.model }}</h1>
+                <div class="post-wrapper">
+                {% for post in posts %}
+                    <a class="car-post" href="{% url 'detail-post' post.id %}">
+                        <img src="{{ post.images.url }}" alt="">
+                    </a>
+                {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}

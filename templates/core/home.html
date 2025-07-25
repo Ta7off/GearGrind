@@ -1,0 +1,54 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block title %}Home{% endblock %}
+{% block extra_head %}
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+{% endblock %}
+
+{% block page_class %}home-page{% endblock %}
+
+{% block content %}
+    <form method="GET" action="{% url 'search-results' %}" class="search-form">
+        <input type="text" name="q" placeholder="Search..." class="search-input">
+        <button type="submit" class="search-button">
+            <img src="{{ MEDIA_URL }}assets/search_icon.png" alt="search" class="search-icon">
+        </button>
+    </form>
+
+    <div class="posts-wrapper">
+        {% for post in posts %}
+            <div class="post">
+                <div class="author-info">
+                    <a href="{% url 'user-details' post.author.id %}" class="author-image">
+                        <img src="{{ post.author.profile_image.url }}" alt="author-pfp">
+                    </a>
+                    <a href="{% url 'user-details' post.author.id %}" class="author-username">
+                        <p>
+                            <strong>
+                                {{ post.author.username }}
+                            </strong>
+                        </p>
+                    </a>
+                </div>
+            {% if post.car.is_listed %}
+                <div class="bidding">
+                    <img src="{{ MEDIA_URL }}assets/Red_circle.gif" class="red-dot" alt="is_being_sold">
+                </div>
+            {% endif %}
+                <a href="{% url 'detail-post' post.pk %}">
+                    <div class="post-image">
+                        {% if post.images %}
+                            <img src="{{ post.images.url }}" alt="post-image">
+                        {% endif %}
+                    </div>
+                    <div class="post-text">
+                        <h1>{{ post.title }}</h1>
+                        <p>{{ post.description|truncatechars:80 }}</p>
+                        <p class="post-date">date created:{{ post.created_at|date:"F j, Y, H:i" }}</p>
+                    </div>
+                </a>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

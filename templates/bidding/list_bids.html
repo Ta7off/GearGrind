@@ -1,0 +1,35 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block title %}Home{% endblock %}
+{% block extra_head %}
+    <link rel="stylesheet" href="{% static 'css/list_bids.css' %}">
+{% endblock %}
+
+{% block page_class %}Your bids{% endblock %}
+
+{% block content %}
+    {% for bid in bid_list %}
+        <div class="bidding">
+            <h1>
+                {{ bid.car.make }} {{ bid.car.model }}
+            </h1>
+            <h3>
+                {{ bid.amount }} BGN
+            </h3>
+            <div class="bid-interaction">
+                <a class="buttons" href="{% url 'delete-bid' bid.id %}">
+                    Delete
+                </a>
+                <a class="buttons" href="{% url 'car-detail' bid.car.id %}">
+                    Car detail
+                </a>
+                <a class="buttons" href="{% url 'update-bid' bid.id %}">
+                    Change Amount
+                </a>
+            </div>
+        </div>
+    {% empty %}
+        <h1 style="text-align: center">You have not bid on any car yet</h1>
+    {% endfor %}
+{% endblock %}

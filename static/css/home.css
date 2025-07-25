@@ -1,0 +1,171 @@
+
+.posts-wrapper {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    padding: 2rem 1rem;
+    align-items: center;
+}
+
+
+.post {
+    position: relative;
+    width: 100%;
+    max-width: 50%;
+    margin: 1.5rem;
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.post:hover {
+    transform: translateY(-3px);
+}
+.author-info {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    padding: 4px 8px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    z-index: 10;
+}
+
+.author-image img {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.author-username p {
+    font-size: 14px;
+    font-weight: 600;
+    margin: 0;
+    color: #333;
+}
+
+.post-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.post-image img {
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+    z-index: 1;
+    border-radius: 6px;
+}
+
+.post-text {
+    padding: 1.5rem;
+    margin-top: auto;
+}
+
+.post-text h1 {
+    margin: 0;
+    font-size: 1.8rem;
+    color: #222;
+}
+
+.post-text p {
+    margin: 0.5rem 0;
+    color: #555;
+}
+
+.post-date {
+    display: flex;
+    justify-content: flex-end;
+    color: gray;
+    opacity: 50%;
+}
+
+.on-sale {
+    display: flex;
+    justify-content: center;
+    background-color: #466f69;
+    color: white;
+    pointer-events: none;
+    user-select: none;
+    cursor: default;
+    padding: 7px;
+    border-radius: 20px;
+}
+
+.search-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem auto;
+    max-width: 600px;
+    gap: 0.5rem;
+}
+
+.search-input {
+    flex: 1;
+    padding: 0.75rem 1rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    outline: none;
+    transition: 0.3s;
+}
+
+.search-input:hover {
+    transform: scale(1.03);
+}
+
+.search-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.search-icon {
+    width: 44px;
+    height: 44px;
+    transition: 0.3s;
+}
+
+.search-icon:hover {
+    transform: scale(1.1);
+}
+
+.search-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile-image img:hover {
+    transform: scale(1.03);
+}
+
+.red-dot {
+    width: 25px;
+    height: 25px;
+}
+
+.bidding {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    padding: 4px 8px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    z-index: 10;
+}

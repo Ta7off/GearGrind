@@ -1,0 +1,21 @@
+{% extends 'core/base.html' %}
+{% load crispy_forms_filters %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block extra_head %}
+    <link rel="stylesheet" href="{% static 'css/user_details.css' %}">
+{% endblock %}
+{% block title %}Account deletion{% endblock %}
+
+{% block content %}
+    <div class="account-delete">
+        <h2>Are you sure you want to delete your account?</h2>
+        <form method="post" action="{% url 'logout' %}">
+            {% csrf_token %}
+            <button type="submit" class="buttons danger">Yes, delete it</button>
+            <a href="{% url 'user-details' user.id %}" class="buttons">Cancel</a>
+        </form>
+
+    </div>
+{% endblock %}
