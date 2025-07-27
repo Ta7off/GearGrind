@@ -1,6 +1,6 @@
 # 📘 GearGrind — Project Setup Guide
 
-Welcome to **GearGrind**! This repo is the starting point for [insert brief app description here]. Follow the steps below to set up the project locally and start grinding code 💻⚙️
+Welcome to **GearGrind**! This repo is the starting point for a car social media/Auction. Follow the steps below to set up the project locally and start grinding code 💻⚙️
 
 ---
 
