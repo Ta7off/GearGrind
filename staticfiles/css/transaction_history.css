@@ -1,0 +1,50 @@
+.sale {
+    display: flex;
+    background-color: pink;
+    padding: 20px;
+    width: 50%;
+    margin: auto;
+    align-items: center;
+    gap: 30px;
+    border-radius: 13px;
+    transition: 0.3s;
+}
+
+.sale a {
+    width: 50%;
+    max-width: 140px;
+}
+
+.sale:hover {
+    transform: scale(1.1);
+}
+
+.purchase {
+    display: flex;
+    background-color: rgb(149, 220, 195);
+    padding: 20px;
+    width: 50%;
+    margin: 15px auto;
+    align-items: center;
+    gap: 30px;
+    border-radius: 13px;
+    transition: 0.3s;
+}
+
+.sale img,
+.purchase img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-radius: 13px;
+}
+
+.purchase a {
+    width: 50%;
+    max-width: 140px;
+}
+
+.purchase:hover {
+    transform: scale(1.1);
+}

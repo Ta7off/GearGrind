@@ -1,0 +1,21 @@
+main {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 50%;
+}
+
+.bidding {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.bid-interaction {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+
+}

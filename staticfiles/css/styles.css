@@ -1,0 +1,122 @@
+:root {
+    --main-bg: #FFFAEC;
+    --hover-accent: #F5ECD5;
+    --action: #233f3d;
+    --text-dark: #3D3D3D;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--main-bg);
+    color: var(--text-dark);
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: var(--action);
+    text-decoration: none;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background: var(--hover-accent);
+    box-sizing: border-box;
+}
+
+footer {
+    background-color: var(--hover-accent);
+    padding: 0.5rem 2rem;
+}
+
+.btn {
+    background-color: var(--action);
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #ffffff;
+}
+
+main {
+    padding: 2rem;
+}
+
+.logo {
+    height: 100px;
+    width: auto;
+    display: inline-block;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+.listing {
+    display: flex;
+    flex-direction: row;
+}
+
+.home-page {
+    padding: 0;
+}
+
+header a p {
+    color: var(--hover-accent);
+    background: var(--action);
+    padding: 20px;
+}
+
+.nav-unregistered-div {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.buttons {
+    font-size: 14px;
+    color: var(--hover-accent);
+    background: var(--action);
+    padding: 20px;
+    border-radius: 30px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-weight: bold;
+}
+
+.buttons:hover {
+    background-color: #466f69;
+    transform: scale(1.03);
+}
+
+.logo:hover {
+    transform: scale(1.03);
+}
+
+button {
+    border: none;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+.pfp {
+    transition: 0.3s;
+}
+
+.pfp img{
+    width: 100px;
+    border-radius: 50%;
+    height: 100px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.pfp:hover {
+    transform: scale(1.03);
+}
