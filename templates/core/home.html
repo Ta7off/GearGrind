@@ -12,7 +12,7 @@
     <form method="GET" action="{% url 'search-results' %}" class="search-form">
         <input type="text" name="q" placeholder="Search..." class="search-input">
         <button type="submit" class="search-button">
-            <img src="{{ MEDIA_URL }}assets/search_icon.png" alt="search" class="search-icon">
+            <img src="/media/assets/search_icon.png" alt="search" class="search-icon">
         </button>
     </form>
 
@@ -33,7 +33,7 @@
                 </div>
             {% if post.car.is_listed %}
                 <div class="bidding">
-                    <img src="{{ MEDIA_URL }}assets/Red_circle.gif" class="red-dot" alt="is_being_sold">
+                    <img src="/media/assets/Red_circle.gif" class="red-dot" alt="is_being_sold">
                 </div>
             {% endif %}
                 <a href="{% url 'detail-post' post.pk %}">

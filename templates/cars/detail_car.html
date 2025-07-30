@@ -28,12 +28,12 @@
                 <h1 style="color: #EB603E; align-items: center">
                     This car is up for bidding
                 </h1>
-                <img style="width: 39.2px; height: 39.2px" src="{{ MEDIA_URL }}assets/Red_circle.gif" alt="">
+                <img style="width: 39.2px; height: 39.2px" src="/media/assets/Red_circle.gif" alt="">
             </div>
             {% if car.owner != request.user %}
                 <a style="display: flex; justify-content: center; align-items: center; margin-bottom: 10px"
                    href="{% url 'place-bid' car.id %}">
-                    <img style="width: 90px; height: 90px" src="{{ MEDIA_URL }}assets/place_bid.png" alt="">
+                    <img style="width: 90px; height: 90px" src="/media/assets/place_bid.png" alt="">
                 </a>
             {% endif %}
         </div>
@@ -50,25 +50,25 @@
                     {% if car.owner == request.user and not car.is_listed %}
                         <a href="{% url 'start-auction' car.id %}">
                             <img style="width: 90px; height: 90px"
-                                 src="{{ MEDIA_URL }}assets/auction.png" alt="">
+                                 src="/media/assets/auction.png" alt="">
                         </a>
                     {% endif %}
                     {% if car.owner == request.user and car.is_listed %}
                         <a href="{% url 'end-auction' car.id %}">
                             <img style="width: 90px; height: 90px"
-                                 src="{{ MEDIA_URL }}assets/end_auction.png" alt="">
+                                 src="/media/assets/end_auction.png" alt="">
                         </a>
                         <a href="{% url 'cancel-auction' car.id %}">
                             <img style="width: 90px; height: 90px"
-                                 src="{{ MEDIA_URL }}assets/cancel_auction.png" alt="">
+                                 src="/media/assets/cancel_auction.png" alt="">
                         </a>
                     {% endif %}
                     {% if car.owner == request.user %}
                         <a href="{% url 'car-delete' car.id %}">
-                            <img src="{{ MEDIA_URL }}assets/delete_car.png" alt="">
+                            <img src="/media/assets/delete_car.png" alt="">
                         </a>
                         <a href="{% url 'car-edit' car.id %}">
-                            <img src="{{ MEDIA_URL }}assets/edit_car.png" alt="">
+                            <img src="/media/assets/edit_car.png" alt="">
                         </a>
                     {% endif %}
                 </div>

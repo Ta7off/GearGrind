@@ -57,7 +57,7 @@
                         <button type="submit" class="delete-icon-button"
                                 onclick="return confirm('Are you sure you want to delete this post?')"
                                 title="Delete Post">
-                            <img src="{{ MEDIA_URL }}assets/delete_post.png" alt="Delete" class="delete-icon">
+                            <img src="/media/assets/delete_post.png" alt="Delete" class="delete-icon">
                         </button>
                     </form>
                 </div>
@@ -116,7 +116,7 @@
                             <button type="submit" class="delete-icon-button"
                                     onclick="return confirm('Are you sure you want to delete this post?')"
                                     title="Delete Post">
-                                <img src="{{ MEDIA_URL }}assets/delete_post.png" alt="Delete" class="delete-icon">
+                                <img src="/media/assets/delete_post.png" alt="Delete" class="delete-icon">
                             </button>
                         </form>
                     </div>
@@ -130,9 +130,9 @@
             {% csrf_token %}
             <button type="submit" class="like-button" title="Like this post">
                 {% if request.user in post.likes.all %}
-                    <img src="{{ MEDIA_URL }}assets/liked_post_tp.png" alt="Liked">
+                    <img src="/media/assets/liked_post_tp.png" alt="Liked">
                 {% else %}
-                    <img src="{{ MEDIA_URL }}assets/like_post.png" alt="Like">
+                    <img src="/media/assets/like_post.png" alt="Like">
                 {% endif %}
                 {{ post.total_likes }}
             </button>
@@ -142,9 +142,9 @@
             {% csrf_token %}
             <button type="submit" class="dislike-button" title="Dislike this post">
                 {% if request.user in post.dislikes.all %}
-                    <img src="{{ MEDIA_URL }}assets/disliked_icon_tp.png" alt="Disliked">
+                    <img src="/media/assets/disliked_icon_tp.png" alt="Disliked">
                 {% else %}
-                    <img src="{{ MEDIA_URL }}assets/dislike_post.png" alt="Dislike">
+                    <img src="/media/assets/dislike_post.png" alt="Dislike">
                 {% endif %}
                 {{ post.total_dislikes }}
             </button>
@@ -158,12 +158,12 @@
                 <h1 style="color: #EB603E; align-items: center">
                     {{ post.car.owner.username }}'s {{ post.car.make }} {{ post.car.model }} is up for bidding
                 </h1>
-                <img style="width: 39.2px; height: 39.2px" src="{{ MEDIA_URL }}assets/Red_circle.gif" alt="">
+                <img style="width: 39.2px; height: 39.2px" src="/media/assets/Red_circle.gif" alt="">
             </div>
             {% if post.car.owner != request.user %}
                 <a style="display: flex; justify-content: center; align-items: center; margin-bottom: 10px"
                    href="{% url 'place-bid' post.car.id %}">
-                    <img style="width: 90px; height: 90px" src="{{ MEDIA_URL }}assets/place_bid.png" alt="">
+                    <img style="width: 90px; height: 90px" src="/media/assets/place_bid.png" alt="">
                 </a>
             {% endif %}
         </div>
@@ -171,7 +171,7 @@
     {% endif %}
 
     <a href="{% url 'car-detail' post.car.id %}" class="car-details-icon">
-        <img src="{{ MEDIA_URL }}assets/car_detail.png" alt="car-details">
+        <img src="/media/assets/car_detail.png" alt="car-details">
     </a>
 </div>
 <div class="comments-section">

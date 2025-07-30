@@ -19,7 +19,7 @@
 <body class="{% block page_class %}{% endblock %}">
 <header>
     <a href="{% url 'home' %}">
-        <img src="{{ MEDIA_URL }}assets/logo.png" alt="Logo" class="logo">
+        <img src="/media/assets/logo.png" alt="Logo" class="logo">
     </a>
     {% if not user.is_authenticated %}
         <div class="nav-unregistered-div">
@@ -33,7 +33,7 @@
 
     {% else %}
         <a href="{% url 'create-post' %}" class="pfp">
-            <img src="{{ MEDIA_URL }}assets/add_post.png" alt="add-car">
+            <img src="/media/assets/add_post.png" alt="add-car">
         </a>
         <a href="{% url 'user-details' user.id %}" class="pfp">
             <img src="{{ user.profile_image.url }}" alt="Profile Image ">
