@@ -28,6 +28,8 @@ DEBUG = os.environ.get('DJANGO_DEBUG', 'False') == 'True'
 
 ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", config('ALLOWED_HOSTS')).split(",")
 
+CSRF_TRUSTED_ORIGINS = os.getenv("CSRF_TRUSTED_ORIGINS", config('CSRF_TRUSTED_ORIGINS')).split(",")
+
 # Application definition
 
 INSTALLED_APPS = [
