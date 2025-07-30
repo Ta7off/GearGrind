@@ -26,7 +26,7 @@ class Car(models.Model):
         default=False
     )
     image = models.ImageField(
-        upload_to='media/car_pictures/',
+        upload_to='car_pictures/',
         default='car_pictures/default.png',
     )
 

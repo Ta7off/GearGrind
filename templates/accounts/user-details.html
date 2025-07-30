@@ -14,23 +14,23 @@
             {% if request.user == profile %}
                 <form class="profile-icons" id="logout-form" action="{% url 'logout' %}" method="POST">
                     {% csrf_token %}
-                    <img src="/media/assets/logout.png" alt="Logout" class="clickable-image"
+                    <img src="{% static 'assets/logout.png' %}" alt="Logout" class="clickable-image"
                          onclick="this.closest('form').submit();">
                 </form>
                 <a class="profile-icons" href="{% url 'user-update' profile.id %}">
-                    <img src="/media/assets/edit_account.png" alt="">
+                    <img src='{% static "assets/edit_account.png" %}' alt="">
                 </a>
 
                 <a href="{% url 'list-bid' %}" class="profile-icons">
-                    <img src="{{ MEDIA_URL }}assets/auctions.png" alt="List Icon">
+                    <img src='{% static "assets/auction.png" %}' alt="List Icon">
                 </a>
             {% endif %}
             <a class="profile-icons" href="{% url 'transaction_history' profile.id %}">
-                <img src="{{ MEDIA_URL }}assets/transaction_history.png" alt="Transactions">
+                <img src='{% static "assets/transaction_history.png" %}' alt="Transactions">
             </a>
             {% if request.user == profile %}
                 <a href="{% url 'user-delete' %}" class="profile-icons">
-                    <img src="{{ MEDIA_URL }}assets/delete_account.png" alt="List Icon">
+                    <img src='{% static "assets/delete_account.png" %}' alt="List Icon">
                 </a>
             {% endif %}
         </div>
@@ -55,7 +55,7 @@
                     {% if request.user == profile %}
                         <div class="car">
                             <a href="{% url 'car-create' %}">
-                                <img src="/media/assets/add_car.png" alt="Add a car">
+                                <img src='{% static "assets/add_car.png" %}' alt="Add a car">
                             </a>
                         </div>
                     {% endif %}

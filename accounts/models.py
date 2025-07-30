@@ -12,7 +12,7 @@ class UserProfile(AbstractUser):
         default=False
     )
     profile_image = models.ImageField(
-        upload_to='media/profile_pictures',
+        upload_to='profile_pictures/ ',
         default='profile_pictures/default.png',
         blank=True,
         null=True
