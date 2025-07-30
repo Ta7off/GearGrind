@@ -44,28 +44,18 @@ Make sure you have the following installed:
    pip install -r requirements.txt
    ```
 
+   ```bash
+   python manage.py makemigrations
+   python manage.py migrate
+   ```
+
 5. **Run the application**
    Replace with your actual command (e.g.):
    ```bash
-   python app.py
+   python manage.py runserver
    ```
 
 ---
-
-## 📂 Project Structure (example)
-
-```
-GearGrind/
-├── app.py
-├── .venv/
-├── requirements.txt
-├── README.md
-├── templates/
-│   └── index.html
-└── static/
-    └── style.css
-```
-
 ---
 
 ## 💡 Tips
