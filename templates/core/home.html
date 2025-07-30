@@ -21,7 +21,7 @@
             <div class="post">
                 <div class="author-info">
                     <a href="{% url 'user-details' post.author.id %}" class="author-image">
-                        <img src="{{ post.author.profile_image.url }}" alt="author-pfp">
+                        <img src="{{ post.author.profile_image }}" alt="author-pfp">
                     </a>
                     <a href="{% url 'user-details' post.author.id %}" class="author-username">
                         <p>
@@ -39,7 +39,7 @@
                 <a href="{% url 'detail-post' post.pk %}">
                     <div class="post-image">
                         {% if post.images %}
-                            <img src="{{ post.images.url }}" alt="post-image">
+                            <img src="{{ post.images }}" alt="post-image">
                         {% endif %}
                     </div>
                     <div class="post-text">

@@ -11,12 +11,12 @@ class UserProfile(AbstractUser):
     is_dealership = models.BooleanField(
         default=False
     )
-    profile_image = models.ImageField(
-        upload_to='profile_pictures/ ',
-        default='profile_pictures/default.png',
+    profile_image = models.URLField(
         blank=True,
-        null=True
+        null=True,
+        default='https://static.vecteezy.com/system/resources/previews/020/911/740/non_2x/user-profile-icon-profile-avatar-user-icon-male-icon-face-icon-profile-icon-free-png.png'
     )
+
     bio = models.TextField(
         blank=True,
         null=True

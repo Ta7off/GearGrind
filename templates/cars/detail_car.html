@@ -12,7 +12,7 @@
     <div class="owner-wrapper">
         <div class="profile-image">
             <a href="{% url 'user-details' car.owner.id %}">
-                <img src="{{ car.owner.profile_image.url }}" alt="pfp">
+                <img src="{{ car.owner.profile_image }}" alt="pfp">
             </a>
         </div>
         <div class="profile-username">
@@ -41,7 +41,7 @@
     {% endif %}
     <div class="car-detail-wrapper">
         <div class="car-image">
-            <img src="{{ car.image.url }}" alt="car-image">
+            <img src="{{ car.image }}" alt="car-image">
         </div>
         <div class="car-details-wrapper">
             <div class="car-information">
@@ -82,7 +82,7 @@
                 <div class="post-wrapper">
                 {% for post in posts %}
                     <a class="car-post" href="{% url 'detail-post' post.id %}">
-                        <img src="{{ post.images.url }}" alt="">
+                        <img src="{{ post.images }}" alt="">
                     </a>
                 {% endfor %}
                 </div>

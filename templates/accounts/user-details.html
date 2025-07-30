@@ -37,7 +37,7 @@
         <div class="profile-panel">
             <div class="details">
                 <div class="profile">
-                    <img src="{{ profile.profile_image.url }}" alt="profile_image">
+                    <img src="{{ profile.profile_image }}" alt="profile_image">
                     <h1>{{ profile.username }}</h1>
                     <h3>email for contact: {{ profile.email }}</h3>
                     {% if profile.bio %}
@@ -62,7 +62,7 @@
                     {% for car in profile.owned_cars.all %}
                         <div class="car">
                             <a href="{% url 'car-detail' car.id %}">
-                                <img src="{{ car.image.url }}" alt="car-image">
+                                <img src="{{ car.image }}" alt="car-image">
                             </a>
                         </div>
                     {% endfor %}

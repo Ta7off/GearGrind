@@ -25,9 +25,10 @@ class Car(models.Model):
     is_listed = models.BooleanField(
         default=False
     )
-    image = models.ImageField(
-        upload_to='car_pictures/',
-        default='car_pictures/default.png',
+    image = models.URLField(
+        blank=True,
+        null=True,
+        default='https://w7.pngwing.com/pngs/208/784/png-transparent-car-drawing-car-outline-compact-car-car-cartoon-thumbnail.png'
     )
 
     def __str__(self):

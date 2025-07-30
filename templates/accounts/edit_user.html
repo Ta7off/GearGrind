@@ -14,7 +14,7 @@
   <div class="edit-profile-container">
     <h2>Edit Your Profile</h2>
     {% if user.profile_image %}
-      <img class="profile-image-preview" src="{{ user.profile_image.url }}" alt="Current Profile Picture">
+      <img class="profile-image-preview" src="{{ user.profile_image }}" alt="Current Profile Picture">
     {% endif %}
     <form method="POST" enctype="multipart/form-data">
       {% csrf_token %}

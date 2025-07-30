@@ -9,7 +9,7 @@ class Post(models.Model):
     author = models.ForeignKey(UserProfile, on_delete=models.CASCADE, related_name='posts')
     title = models.CharField(max_length=150)
     description = models.TextField(blank=True)
-    images = models.ImageField(upload_to='media/car_pictures', blank=True, null=True)
+    images = models.URLField(blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
     is_listing = models.BooleanField(default=False)
 

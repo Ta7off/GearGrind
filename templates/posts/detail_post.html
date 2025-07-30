@@ -13,7 +13,7 @@
     {% if post.images %}
         <div class="post-with-image">
         <div class="image">
-            <img src="{{ post.images.url }}" alt="post image">
+            <img src="{{ post.images }}" alt="post image">
         </div>
         <div class="info-profile-wrapper">
             <div class="info-wrapper">
@@ -32,7 +32,7 @@
             <div class="profile-wrapper">
                 <div class="profile-image">
                     <a href="{% url 'user-details' post.author.id %}">
-                        <img src="{{ post.author.profile_image.url }}" alt="user pfp">
+                        <img src="{{ post.author.profile_image }}" alt="user pfp">
                     </a>
                 </div>
                 <div class="profile-info">
@@ -91,7 +91,7 @@
                 <div class="profile-wrapper">
                     <div class="profile-image">
                         <a href="{% url 'user-details' post.author.id %}">
-                            <img src="{{ post.author.profile_image.url }}" alt="user pfp">
+                            <img src="{{ post.author.profile_image }}" alt="user pfp">
                         </a>
                     </div>
                     <div class="profile-info">

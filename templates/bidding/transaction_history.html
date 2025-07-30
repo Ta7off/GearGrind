@@ -13,7 +13,7 @@
         {% if profile == transaction.seller %}
             <div class="sale">
                 <a href="{% url 'car-detail' transaction.car.id %}">
-                    <img src="{{ transaction.car.image.url }}" alt="car details">
+                    <img src="{{ transaction.car.image }}" alt="car details">
                 </a>
                 <h1>
                     <a href="{% url 'user-details' transaction.seller.id %}">
@@ -27,7 +27,7 @@
         {% elif profile == transaction.buyer %}
             <div class="purchase">
                 <a href="{% url 'car-detail' transaction.car.id %}">
-                    <img src="{{ transaction.car.image.url }}" alt="car details">
+                    <img src="{{ transaction.car.image }}" alt="car details">
                 </a>
                 <h1>
                     <a href="{% url 'user-details' transaction.seller.id %}">
