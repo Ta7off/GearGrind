@@ -38,7 +38,7 @@ class CarDetailView(DetailView):
         context = super().get_context_data(**kwargs)
 
         car = self.object
-        posts = Post.objects.filter(car=car, images__isnull=False).exclude(images='').order_by('-created_at')
+        posts = Post.objects.filter(car=car, image__isnull=False).exclude(image='').order_by('-created_at')
 
         context['posts'] = posts
         return context

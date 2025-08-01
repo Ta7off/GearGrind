@@ -14,7 +14,4 @@ class CarCreateForm(CarBaseForm):
     pass
 
 class CarUpdateForm(CarBaseForm):
-    class Meta(CarBaseForm.Meta):
-        widgets = {
-            'image': NoClearableFileInput(),
-        }
+    pass

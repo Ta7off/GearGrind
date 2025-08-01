@@ -21,7 +21,7 @@ class Post(models.Model):
     description = models.TextField(
         blank=True
     )
-    images = models.URLField(
+    image = models.URLField(
         blank=True,
         null=True,
     )
