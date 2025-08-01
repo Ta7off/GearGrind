@@ -11,7 +11,7 @@
 {% block content %}
     <div class="account-delete">
         <h2>Are you sure you want to delete your account?</h2>
-        <form method="post" action="{% url 'logout' %}">
+        <form method="post" action="{% url 'user-delete' %}">
             {% csrf_token %}
             <button type="submit" class="buttons danger">Yes, delete it</button>
             <a href="{% url 'user-details' user.id %}" class="buttons">Cancel</a>
