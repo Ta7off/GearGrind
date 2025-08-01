@@ -3,5 +3,4 @@ from .models import UserProfile
 
 @admin.register(UserProfile)
 class UserProfileAdmin(admin.ModelAdmin):
-    list_display = ['is_dealership']
     search_fields = ['username']
