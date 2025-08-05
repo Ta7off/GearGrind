@@ -26,7 +26,7 @@
             <div style="display: flex; justify-content: center; align-items: center; gap: 12px
 ;    pointer-events: none; user-select: none; cursor: default;">
                 <h1 style="color: #EB603E; align-items: center">
-                    This car is up for bidding
+                    This car is up for bidding | current highest bid: {{ car.highest_bid|floatformat:0 }} $
                 </h1>
                 <img style="width: 39.2px; height: 39.2px" src='{% static "assets/Red_circle.gif" %}' alt="">
             </div>

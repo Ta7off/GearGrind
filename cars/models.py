@@ -33,3 +33,8 @@ class Car(models.Model):
 
     def __str__(self):
         return f'{self.make} {self.model} ({self.year})'
+
+    @property
+    def highest_bid(self):
+        highest = self.bids.order_by('-amount').first()
+        return highest.amount if highest else 0
