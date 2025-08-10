@@ -31,11 +31,11 @@
                         </p>
                     </a>
                 </div>
-            {% if post.car.is_listed %}
-                <div class="bidding">
-                    <img src='{% static "assets/Red_circle.gif" %}' class="red-dot" alt="is_being_sold">
-                </div>
-            {% endif %}
+                {% if post.car.is_listed %}
+                    <div class="bidding">
+                        <img src='{% static "assets/Red_circle.gif" %}' class="red-dot" alt="is_being_sold">
+                    </div>
+                {% endif %}
                 <a href="{% url 'detail-post' post.pk %}">
                     <div class="post-image">
                         {% if post.image %}
@@ -49,6 +49,8 @@
                     </div>
                 </a>
             </div>
+        {% empty %}
+            <h1>No posts currently</h1>
         {% endfor %}
     </div>
 {% endblock %}
