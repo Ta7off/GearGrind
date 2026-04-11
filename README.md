@@ -25,11 +25,6 @@ Whether you want to post about your latest car mod, browse other enthusiasts’ 
 
 ---
 
-## 🖼 Screenshots
-*(Coming Soon — Add screenshots of the app here)*
-
----
-
 ## 🔗 Live Demo
 **[View GearGrind Live](https://geargrind-brgde5hgaqf6dugy.italynorth-01.azurewebsites.net/)**
 
